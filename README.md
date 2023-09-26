@@ -1,21 +1,30 @@
 # Password-Generator
-This is an application for generating a password. It features prompts, 
-alerts and a confirmation when activity is successful.
+This is an application for generating random passwords. It features prompts, 
+alerts and confirmations to seek user's criteria for the password to be generated.
+Once criteria are set, password is generated.
 
-## Instructions
+## Work Done So Far...
 
-The following image shows the web application's appearance and functionality:
+**Criteria Set-Up:** The application is able to collect and store input from the user 
+to determine whatever parameters they want on their desired output.
 
-* Generate a password when the button is clicked
-  * Present a series of prompts for password criteria
-    * Length of password
-      * At least 8 characters but no more than 128.
-    * Character types
-      * Lowercase
-      * Uppercase
-      * Numeric
-      * Special characters ($@%&*, etc)
-  * Code should validate for each input and at least one character type should be selected
-  * Once prompts are answered then the password should be generated and displayed in an alert or written to the page
+  *Example:*
+1. User can select a password length of at least 8 characters but no more than 128.
+2. User can select character types to be included, within the range of
+    - Lowercase letters
+    - Uppercase letters
+    - Numeric characters
+    
+**Input Validation:** The written code is able to validate each input made by 
+the user as part of the logic built into it using "If else" conditional statements. 
+Invalid inputs are detected, while true or false confirmations are routed in the 
+relevant direction, so that users can make their choice of password criteria.
 
-  ![password generator demo](./assets/05-javascript-challenge-demo.png)
+## Yet-To-Be-Done:
+The last phase of the project will be to develop the code so it can convert these user 
+inputs to actual random passwords, based on the the custom-criteria of the user.
+
+This a [link](https://contentcommando.github.io/Password-Generator/) to the application.
+
+**Screenshot**
+![Alt text](2023-09-26.png)
