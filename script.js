@@ -112,6 +112,7 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+var allChar = upperCasedCharacters + lowerCasedCharacters + numericCharacters; 
 
 
 
@@ -170,31 +171,26 @@ else {alert("Your input is invalid.")}
 getPasswordOptions()
 
 
+
 // Function for getting a random element from an array
-function getRandom() {
-  var password = ""
-password += Math.floor(Math.random()*lowerCasedCharacters.length);
-password += Math.floor(Math.random()*upperCasedCharacters.length);
-password += Math.floor(Math.random()*numericCharacters.length);
+// function getRandom() {
+//   var password = ""
+// password += Math.floor(Math.random()*lowerCasedCharacters.length);
+// password += Math.floor(Math.random()*upperCasedCharacters.length);
+// password += Math.floor(Math.random()*numericCharacters.length);
 
-while(lengthPrompt > password.length) {
+// while(lengthPrompt > password.length) {
+//   password += allChar [Math.floor(Math.random)*allChar.length]
 
-}
-console.log(lengthPrompt);
+// }
 
-}
+// }
 
-getRandom()
+
 
 // Function to generate password with user input
 function generatePassword() {
-  
-  
-
 }
-// generatePassword()
-
-
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
