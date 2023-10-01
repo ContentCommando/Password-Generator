@@ -112,11 +112,11 @@ var upperCasedCharacters = [
   'Z'
 ];
 
-var allChar = upperCasedCharacters + lowerCasedCharacters + numericCharacters; 
+var allChars = upperCasedCharacters + lowerCasedCharacters + numericCharacters + specialCharacters; 
 
+var randomPassword = document.getElementById("password")
 
-
-
+// var lengthPrompt = 8;
 // Function to prompt user for password options
 function getPasswordOptions() {
 var lengthPrompt = prompt("Select length of password." + "\n" + "Min. of 8 - Max 0f 128.");
@@ -132,7 +132,7 @@ else if (lengthPrompt > 128) {
 
 else if (lengthPrompt >= 8 && lengthPrompt <= 128) {
   alert(lengthPrompt + "\n" + "Correct!");
-  console.log(lengthPrompt);
+  console.log("You chose a length of " + lengthPrompt);
 var lowercaseConfirm = confirm("Include lower-case?");
 if (lowercaseConfirm === true) {
   alert("You said to include lower-case");
@@ -147,61 +147,78 @@ if (uppercaseConfirm === true) {
   alert("You said to include UPPER-CASE");
   console.log(uppercaseConfirm + " for UPPER-CASE");
 }
+
 else {
   alert("You said to Ignore UPPER-CASE")
   console.log(uppercaseConfirm + " for UPPER-CASE");
   
 }
+
 var numericConfirm = confirm("Include Numeric characters?");
 if (numericConfirm === true) {
   alert("You said to include numeric characters.")
   console.log(numericConfirm + " for numeric characters");
-  alert("Click button below to generate password!")
+  alert("Click OK to generate your password!");
+  document.getElementById("password").textContent = getRandom()
+
+return
+}
+if (lowercaseConfirm === false && uppercaseConfirm === false && numericConfirm === false) {
+  alert("Sorry, you have to choose at least one character type.");
 }
 else {
   alert("You said to Ignore numeric characters")
   console.log(numericConfirm + " for numeric characters");
-  alert("Click button below to generate password!")
-  
-}
-}
-else {alert("Your input is invalid.")}
+  alert("Click OK to generate your password!");
+  document.getElementById("password").textContent = getRandom()
 }
 
-getPasswordOptions()
+}
+else {alert("Your input is invalid.")}
+
+
+
+
+
 
 
 
 // Function for getting a random element from an array
-// function getRandom() {
-//   var password = ""
-// password += Math.floor(Math.random()*lowerCasedCharacters.length);
-// password += Math.floor(Math.random()*upperCasedCharacters.length);
-// password += Math.floor(Math.random()*numericCharacters.length);
+function getRandom() {
+var password = "";
+// var upperCasedCharacters = uppercaseConfirm;
+// var lowerCasedCharacters = lowercaseConfirm;
+// var numericCharacters = numericConfirm;
 
-// while(lengthPrompt > password.length) {
-//   password += allChar [Math.floor(Math.random)*allChar.length]
-
-// }
-
-// }
-
-
-
-// Function to generate password with user input
-function generatePassword() {
+password += lowerCasedCharacters[Math.floor(Math.random() * lowerCasedCharacters.length)];
+password += upperCasedCharacters[Math.floor(Math.random() * upperCasedCharacters.length)];
+password += numericCharacters[Math.floor(Math.random() * numericCharacters.length)];
+while(+lengthPrompt > password.length) {
+  password += allChars[Math.floor(Math.random() * allChars.length)];
 }
 
-// Get references to the #generate element
-var generateBtn = document.querySelector('#generate');
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector('#password');
-
-  passwordText.value = password;
+randomPassword.value = password;
 }
+
+}
+
+getRandom()
+
+
+// // Function to generate password with user input
+// function generatePassword() {
+// }
+
+// // Get references to the #generate element
+// var generateBtn = document.querySelector('#generate');
+
+// // Write password to the #password input
+// function writePassword() {
+//   var password = generatePassword();
+//   var passwordText = document.querySelector('#password');
+
+//   passwordText.value = password;
+// }
 
 // Add event listener to generate button
-generateBtn.addEventListener('click', writePassword)
+generateBtn.addEventListener('click', getPasswordOptions())
