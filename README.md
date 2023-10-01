@@ -20,11 +20,14 @@ the user as part of the logic built into it using "If else" conditional statemen
 Invalid inputs are detected, while true or false confirmations are routed in the 
 relevant direction, so that users can make their choice of password criteria.
 
+**Password Generation:** Additional coding has been done to make the application generate random passwords. The password are generated based on user-criterion of `length` only as of now.
+
 ## Yet-To-Be-Done:
-The last phase of the project will be to develop the code so it can convert these user 
-inputs to actual random passwords, based on the the custom-criteria of the user.
+The next phase of the project will be to develop the code so it can generate random passwords 
+based on other user-criteria input such as character type.
 
 This a [link](https://contentcommando.github.io/Password-Generator/) to the application.
 
-**Screenshot**
-![Alt text](2023-09-26.png)
+**GIF**
+![Alt text](<Untitled_ Oct 1, 2023 11_18 PM.gif>)
+
